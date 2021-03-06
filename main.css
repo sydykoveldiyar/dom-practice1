@@ -1,0 +1,41 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    max-width: 1220px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 15px;
+}
+
+.buttons{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.btn{
+    width: 100px;
+    height: 40px;
+    padding: 10px;
+    margin: 0 10px;
+}
+
+.range-inp{
+    display: flex;
+    justify-content: center;
+    margin: 30px;
+}
+
+.filter-img{
+    display: flex;
+    justify-content: center;
+}
+
+img{
+    max-width: 100%;
+    width: 50%;
+}
