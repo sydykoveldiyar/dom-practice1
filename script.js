@@ -1,7 +1,7 @@
 let img = document.querySelector('img')
 let filterInp = document.querySelector('#filter')
-let btns = Array.from(document.querySelectorAll('.btn'))
 let active
+let btns = Array.from(document.querySelectorAll('.btn'))
 const blurEffect = () => {
     img.style.filter = `blur(${+filterInp.value}px)`
     active = 'Blur'
