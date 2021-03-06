@@ -1,26 +1,38 @@
-let blur = document.querySelector('#blur')
-let sepia = document.querySelector('#sepia')
-let invert = document.querySelector('#invert')
-
 let img = document.querySelector('img')
-
 let filterInp = document.querySelector('#filter')
-
+let btns = Array.from(document.querySelectorAll('.btn'))
 let active
-
-blur.addEventListener('click', () => {
+const blurEffect = () => {
     img.style.filter = `blur(${+filterInp.value}px)`
-    active = blur
-})
-sepia.addEventListener('click', () => {
+    active = 'Blur'
+}
+const sepiaEffect = () => {
     img.style.filter = `sepia(${+filterInp.value}%)`
-    active = sepia
-})
-invert.addEventListener('click', () => {
+    active = 'Sepia'
+}
+const invertEffect = () => {
     img.style.filter = `invert(${+filterInp.value}%)`
-    active = invert
+    active = 'Invert'
+}
+const switchActive = (active) => {
+    switch(active){
+        case 'Blur':
+            blurEffect()
+            break
+        case 'Sepia':
+            sepiaEffect()
+            break
+        case 'Invert':
+            invertEffect()
+            break
+    }
+}
+btns.forEach(el => {
+    el.addEventListener('click', (e) => {
+        active = e.target.textContent
+        switchActive(active)
+    })
 })
-
 filterInp.addEventListener('input', () => {
-    active.click()
+    switchActive(active)
 })
